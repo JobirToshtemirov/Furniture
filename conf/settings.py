@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'pages',
     'products',
     'blogs',
-    'users',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -109,3 +109,5 @@ EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
+AUTH_USER_MODEL = 'accounts.UserModel'
