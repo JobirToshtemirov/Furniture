@@ -41,11 +41,14 @@
     <!-- Template CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/reponsive.css' %}">
+
 </head>
 
 <body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}blog">
 {% include 'layouts/header_base.html' %}
-
+{% for message in messages %}
+    <h4>{{ message }}</h4>
+{% endfor %}
 <!-- main content -->
 {% block content %}{% endblock %}
 
@@ -85,6 +88,8 @@
 
 <!-- Template JS -->
 <script src="{% static 'js/theme.js' %}"></script>
+
+
 </body>
 
 
