@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('pages.urls', namespace="pages")),
     path('accounts/', include('accounts.urls', namespace="accounts")),
+    path('products/', include('products.urls', namespace="products")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

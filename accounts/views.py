@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth.views import LogoutView
+from django.contrib.auth.views import LogoutView, LoginView
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView
@@ -22,7 +22,7 @@ class RegisterView(CreateView):
         return super().form_valid(form)
 
 
-class LoginView(TemplateView):
+class LoginView(LoginView):
     template_name = 'registration/user-login.html'
 
 # class CustomLogoutView(LogoutView):
