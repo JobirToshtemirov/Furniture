@@ -1,9 +1,9 @@
 from pathlib import Path
-
+from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-7q6pkjbhsr-ih!wpx2eb5l1=o!d@_v$085r#=+&c^*%sozqlui'
-DEBUG = True
+DEBUG = config("DEBUG", default=True, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'products',
     'blogs',
     'accounts',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -55,9 +56,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'conf.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASS"),
+        "HOST": config("DB_HOST"),
+        "PORT": config("DB_PORT"),
     }
 }
 
