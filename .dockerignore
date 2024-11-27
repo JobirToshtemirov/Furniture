@@ -1,0 +1,44 @@
+
+# Python virtual environment papkasi
+.venv
+venv
+.env/
+
+# Cache va vaqtinchalik fayllar
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.swp
+*.swo
+
+# Git fayllari
+.git
+.gitignore
+
+# IDE konfiguratsiya fayllari
+.idea/
+.vscode/
+
+# Npm yoki node.js fayllari
+node_modules/
+
+# Dockerignore faylining o‘zini o‘z ichiga olmaslik uchun
+.dockerignore
+
+# Log fayllar
+*.log
+
+# Django statik va media fayllari (agar image ichida saqlash shart bo‘lmasa)
+staticfiles/
+media/
+
+# Lokal ma'lumotlar bazasi fayllari
+*.sqlite3
+
+# Docker Compose override fayllari
+docker-compose.override.yml
+
+# Har qanday maxfiy konfiguratsiya fayllar
+.env*
+.idea
